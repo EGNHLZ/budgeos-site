@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – BudgeOS / Privacy Policy – BudgeOS</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #111; color: #e5e5e5; }
+      a { color: #60a5fa; }
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+    @media (prefers-color-scheme: dark) { h2 { border-color: #333; } }
+    .badge { display: inline-block; font-size: 0.75rem; background: #f0f0f0; padding: 0.15rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; vertical-align: middle; }
+    @media (prefers-color-scheme: dark) { .badge { background: #2a2a2a; } }
+    .lang-divider { border: none; border-top: 2px dashed #ccc; margin: 3rem 0; }
+    @media (prefers-color-scheme: dark) { .lang-divider { border-color: #444; } }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.5rem 0.75rem; border: 1px solid #ddd; }
+    @media (prefers-color-scheme: dark) { th, td { border-color: #333; } }
+    th { background: #f5f5f5; }
+    @media (prefers-color-scheme: dark) { th { background: #222; } }
+    p.updated { font-size: 0.85rem; color: #666; margin-top: 0; }
+    @media (prefers-color-scheme: dark) { p.updated { color: #999; } }
+  </style>
+</head>
+<body>
+
+<!--
+  ════════════════════════════════════════════════════════════════════
+  TODO VOR VEROEFFENTLICHUNG (Play Store):
+  1. ERLEDIGT: Name/Adresse in §1 (DE + EN + In-App-Screen).
+     RECHTS-HINWEIS: Sitz ist Schweiz (8600 Duebendorf) — die Erklaerung referenziert
+     aber DSGVO/EU. Schweiz = revDSG/nDSG; DSGVO gilt ZUSAETZLICH bei EU-Zielmarkt
+     (ggf. EU-Vertreter nach Art. 27 noetig). Vor Release juristisch pruefen lassen.
+  2. Diese Datei unter einer oeffentlichen URL hosten (z. B.
+     https://budgeos.com/privacy) und im Play-Console-Listing als
+     Datenschutz-URL verlinken.
+  3. Sentry-Abschnitt (§5) nur behalten, wenn ein Sentry-DSN aktiv ist.
+  4. RevenueCat-Abschnitt (§4) nur behalten, wenn Kaeufe live geschaltet sind.
+  Kontakt: support@budgeos.com (Weiterleitung via INWX Mail aktiv).
+  ════════════════════════════════════════════════════════════════════
+-->
+
+<!-- ═══════════════════════════ DEUTSCH ═══════════════════════════ -->
+<h1>Datenschutzerklärung <span class="badge">DE</span></h1>
+<p class="updated">Stand: Juni 2026</p>
+
+<h2>1. Verantwortlicher</h2>
+<p>
+  Eugen Holzmann<br />
+  Sonnentalstrasse 13<br />
+  8600 Dübendorf, Schweiz<br />
+  E-Mail: <a href="mailto:support@budgeos.com">support@budgeos.com</a>
+</p>
+
+<h2>2. Grundsatz: Lokale Datenspeicherung</h2>
+<p>
+  BudgeOS ist primär eine <strong>offline-fähige App</strong>. Alle von dir erfassten Finanzdaten
+  (Buchungen, Budgets, Kategorien, Einstellungen) werden ausschließlich <strong>lokal auf deinem Gerät</strong>
+  in einer verschlüsselten Datenbank (AES-GCM-256, Schlüssel im Android Keystore) gespeichert.
+  Es findet ohne dein aktives Zutun keine Übermittlung an externe Server statt.
+</p>
+
+<h2>3. Optionale Cloud-Synchronisation (Supabase)</h2>
+<p>
+  Wenn du dich mit E-Mail und Passwort registrierst oder einloggst, werden folgende Daten an
+  unseren Cloud-Dienst übertragen:
+</p>
+<table>
+  <tr><th>Datenkategorie</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+  <tr><td>E-Mail-Adresse</td><td>Konto-Identifikation, Passwort-Reset</td><td>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)</td></tr>
+  <tr><td>Passwort (gehasht)</td><td>Authentifizierung</td><td>Art. 6 Abs. 1 lit. b DSGVO</td></tr>
+</table>
+<p>
+  Anbieter: <strong>Supabase Inc.</strong>, San Francisco, USA — Daten werden in der
+  EU-Region (Frankfurt, Deutschland) verarbeitet. Supabase ist EU-US-Data-Privacy-Framework-zertifiziert.
+  Datenschutzinformationen: <a href="https://supabase.com/privacy" target="_blank" rel="noreferrer">supabase.com/privacy</a>
+</p>
+<p>Die Nutzung der Cloud ist freiwillig. Als Gast kannst du die App ohne Registrierung verwenden.</p>
+
+<h2>4. Käufe / Pro-Funktionen (RevenueCat)</h2>
+<p>
+  Wenn du Pro-Funktionen kaufst, verarbeitet <strong>RevenueCat Inc.</strong> Transaktionsdaten
+  (Kauf-Status, Store-Quittung, anonyme Nutzer-ID) zum Zweck der Lizenzverwaltung.
+  RevenueCat speichert keine Zahlungskarteninformationen — diese verbleiben bei Google Play.
+  Datenschutzinformationen: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noreferrer">revenuecat.com/privacy</a>
+</p>
+
+<h2>5. KI-Funktionen (Anthropic Claude)</h2>
+<p>
+  BudgeOS bietet optionale KI-Funktionen: die automatische <strong>Beleg-Erkennung</strong> beim
+  Scannen und <strong>„Fragen zum Dokument"</strong>. Nur wenn du eine dieser Funktionen aktiv
+  auslöst, werden die Inhalte des jeweiligen Belegs bzw. Dokuments (Foto oder erkannter Text,
+  ggf. deine Frage) über eine gesicherte Server-Funktion (Supabase Edge, EU) an die
+  <strong>Anthropic API (Claude)</strong> übertragen und dort ausschließlich zur Beantwortung
+  deiner Anfrage verarbeitet. Es werden keine Konto-, Zugangs- oder sonstigen App-Daten
+  übertragen; die Texterkennung (OCR) selbst läuft vollständig auf deinem Gerät. Anthropic
+  verwendet API-Daten nicht zum Training seiner Modelle. Rechtsgrundlage: Art. 6 Abs. 1 lit. b
+  DSGVO (Funktionserbringung auf deine Anfrage).
+  Datenschutzinformationen: <a href="https://www.anthropic.com/privacy" target="_blank" rel="noreferrer">anthropic.com/privacy</a>
+</p>
+
+<h2>6. Fehler-Reporting (Sentry)</h2>
+<p>
+  Die App nutzt <strong>Sentry</strong> (Sentry, Inc., San Francisco, USA) zur Erfassung von
+  Absturz- und Fehlerberichten, um die Stabilität zu verbessern. Die Daten werden in der
+  <strong>EU-Region (Deutschland)</strong> verarbeitet (<code>ingest.de.sentry.io</code>).
+  Fehlerberichte enthalten <strong>keine Finanzdaten und keine personenbezogenen Daten</strong>:
+  der Nutzerkontext (E-Mail, IP-Adresse, Nutzer-ID) wird vor dem Senden entfernt
+  (<code>sendDefaultPii=false</code>); übertragen werden ausschließlich Geräte-/App-Version und
+  technische Stack-Traces. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+  der Fehlerbehebung und Stabilität). Sentry ist zudem EU-US-Data-Privacy-Framework-zertifiziert.
+  Datenschutzinformationen: <a href="https://sentry.io/privacy/" target="_blank" rel="noreferrer">sentry.io/privacy</a>
+</p>
+
+<h2>7. Berechtigungen</h2>
+<table>
+  <tr><th>Berechtigung</th><th>Zweck</th></tr>
+  <tr><td>INTERNET</td><td>Cloud-Sync (optional) und Fehler-Reporting</td></tr>
+  <tr><td>USE_BIOMETRIC / USE_FINGERPRINT</td><td>Optionaler App-Lock per Fingerabdruck/Gesichtserkennung</td></tr>
+  <tr><td>POST_NOTIFICATIONS</td><td>Lokale Erinnerungen (Fixkosten, Budgetwarnungen) — kein Push-Server</td></tr>
+  <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Wiederherstellen lokaler Erinnerungen nach Gerätestart</td></tr>
+</table>
+
+<h2>8. Deine Rechte (DSGVO)</h2>
+<p>
+  Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17),
+  Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie
+  Widerspruch (Art. 21). Zur Ausübung deiner Rechte wende dich an:
+  <a href="mailto:support@budgeos.com">support@budgeos.com</a>.
+  Du hast außerdem das Recht, bei einer Aufsichtsbehörde Beschwerde einzulegen.
+</p>
+
+<h2>9. Datenlöschung</h2>
+<p>
+  Alle lokalen Daten kannst du jederzeit über <em>Einstellungen → Alle Daten löschen</em> entfernen.
+  Cloud-Konten werden auf Anfrage an <a href="mailto:support@budgeos.com">support@budgeos.com</a>
+  vollständig gelöscht.
+</p>
+
+<h2>10. Änderungen dieser Erklärung</h2>
+<p>
+  Bei wesentlichen Änderungen informieren wir dich in der App. Die jeweils aktuelle Version
+  ist stets unter dieser URL verfügbar.
+</p>
+
+<hr class="lang-divider" />
+
+<!-- ═══════════════════════════ ENGLISH ═══════════════════════════ -->
+<h1>Privacy Policy <span class="badge">EN</span></h1>
+<p class="updated">Last updated: June 2026</p>
+
+<h2>1. Controller</h2>
+<p>
+  Eugen Holzmann<br />
+  Sonnentalstrasse 13<br />
+  8600 Dübendorf, Switzerland<br />
+  Email: <a href="mailto:support@budgeos.com">support@budgeos.com</a>
+</p>
+
+<h2>2. Core principle: local data storage</h2>
+<p>
+  BudgeOS is primarily an <strong>offline-capable app</strong>. All financial data you enter
+  (transactions, budgets, categories, settings) is stored exclusively <strong>on your device</strong>
+  in an encrypted database (AES-GCM-256, key in the Android Keystore).
+  No data is transmitted to external servers without your explicit action.
+</p>
+
+<h2>3. Optional cloud sync (Supabase)</h2>
+<p>
+  If you register or log in with email and password, the following data is transmitted to our
+  cloud service:
+</p>
+<table>
+  <tr><th>Data category</th><th>Purpose</th><th>Legal basis</th></tr>
+  <tr><td>Email address</td><td>Account identification, password reset</td><td>Art. 6(1)(b) GDPR (contract performance)</td></tr>
+  <tr><td>Password (hashed)</td><td>Authentication</td><td>Art. 6(1)(b) GDPR</td></tr>
+</table>
+<p>
+  Provider: <strong>Supabase Inc.</strong>, San Francisco, USA — data is processed in the
+  EU region (Frankfurt, Germany). Supabase is certified under the EU-US Data Privacy Framework.
+  Privacy details: <a href="https://supabase.com/privacy" target="_blank" rel="noreferrer">supabase.com/privacy</a>
+</p>
+<p>Cloud use is optional. You can use the app as a guest without registering.</p>
+
+<h2>4. Purchases / Pro features (RevenueCat)</h2>
+<p>
+  When you purchase Pro features, <strong>RevenueCat Inc.</strong> processes transaction data
+  (purchase status, store receipt, anonymous user ID) for license management.
+  RevenueCat does not store payment card information — this remains with Google Play.
+  Privacy details: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noreferrer">revenuecat.com/privacy</a>
+</p>
+
+<h2>5. AI features (Anthropic Claude)</h2>
+<p>
+  BudgeOS offers optional AI features: automatic <strong>receipt extraction</strong> when scanning
+  and <strong>"Ask the document"</strong>. Only when you actively trigger one of these features,
+  the content of the respective receipt or document (photo or recognized text, plus your question
+  if any) is transmitted via a secured server function (Supabase Edge, EU) to the
+  <strong>Anthropic API (Claude)</strong> and processed there solely to answer your request. No
+  account, login or other app data is transmitted; text recognition (OCR) itself runs entirely on
+  your device. Anthropic does not use API data to train its models. Legal basis: Art. 6(1)(b)
+  GDPR (providing the feature at your request).
+  Privacy details: <a href="https://www.anthropic.com/privacy" target="_blank" rel="noreferrer">anthropic.com/privacy</a>
+</p>
+
+<h2>6. Error reporting (Sentry)</h2>
+<p>
+  The app uses <strong>Sentry</strong> (Sentry, Inc., San Francisco, USA) for crash and error
+  reporting to improve stability. Data is processed in the <strong>EU region (Germany)</strong>
+  (<code>ingest.de.sentry.io</code>). Error reports contain <strong>no financial data and no
+  personal data</strong>: user context (email, IP address, user ID) is stripped before sending
+  (<code>sendDefaultPii=false</code>); only device/app version and technical stack traces are
+  transmitted. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in debugging and stability).
+  Sentry is also certified under the EU-US Data Privacy Framework.
+  Privacy details: <a href="https://sentry.io/privacy/" target="_blank" rel="noreferrer">sentry.io/privacy</a>
+</p>
+
+<h2>7. Permissions</h2>
+<table>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td>INTERNET</td><td>Cloud sync (optional) and error reporting</td></tr>
+  <tr><td>USE_BIOMETRIC / USE_FINGERPRINT</td><td>Optional app lock via fingerprint/face recognition</td></tr>
+  <tr><td>POST_NOTIFICATIONS</td><td>Local reminders (recurring costs, budget alerts) — no push server</td></tr>
+  <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restore local reminders after device reboot</td></tr>
+</table>
+
+<h2>8. Your rights (GDPR)</h2>
+<p>
+  You have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17),
+  restriction of processing (Art. 18), data portability (Art. 20), and objection (Art. 21).
+  To exercise your rights, contact <a href="mailto:support@budgeos.com">support@budgeos.com</a>.
+  You also have the right to lodge a complaint with a supervisory authority.
+</p>
+
+<h2>9. Data deletion</h2>
+<p>
+  You can delete all local data at any time via <em>Settings → Reset all data</em>.
+  Cloud accounts are fully deleted upon request to <a href="mailto:support@budgeos.com">support@budgeos.com</a>.
+</p>
+
+<h2>10. Changes to this policy</h2>
+<p>
+  We will notify you in-app of material changes. The current version is always available at this URL.
+</p>
+
+</body>
+</html>
