@@ -100,15 +100,28 @@
 
 <h2>5. KI-Funktionen (Anthropic Claude)</h2>
 <p>
-  BudgeOS bietet optionale KI-Funktionen: die automatische <strong>Beleg-Erkennung</strong> beim
-  Scannen und <strong>„Fragen zum Dokument"</strong>. Nur wenn du eine dieser Funktionen aktiv
-  auslöst, werden die Inhalte des jeweiligen Belegs bzw. Dokuments (Foto oder erkannter Text,
-  ggf. deine Frage) über eine gesicherte Server-Funktion (Supabase Edge, EU) an die
+  BudgeOS bietet optionale KI-Funktionen: die automatische <strong>Beleg-/Dokument-Erkennung</strong>
+  beim Scannen (einschließlich erkannter Beträge, Fristen und Kontaktdaten des Ausstellers wie
+  Adresse, Telefonnummer und Öffnungszeiten), <strong>„Fragen zum Dokument"</strong> sowie den
+  <strong>KI-Sprachassistenten</strong>. Nur wenn du eine dieser Funktionen aktiv auslöst, werden
+  die dafür nötigen Inhalte über eine gesicherte Server-Funktion (Supabase Edge, EU) an die
   <strong>Anthropic API (Claude)</strong> übertragen und dort ausschließlich zur Beantwortung
-  deiner Anfrage verarbeitet. Es werden keine Konto-, Zugangs- oder sonstigen App-Daten
-  übertragen; die Texterkennung (OCR) selbst läuft vollständig auf deinem Gerät. Anthropic
-  verwendet API-Daten nicht zum Training seiner Modelle. Rechtsgrundlage: Art. 6 Abs. 1 lit. b
-  DSGVO (Funktionserbringung auf deine Anfrage).
+  deiner Anfrage verarbeitet:
+</p>
+<ul>
+  <li>Beim <strong>Scan</strong>: das Foto bzw. der erkannte Text des jeweiligen Belegs/Dokuments.</li>
+  <li>Bei <strong>„Fragen zum Dokument"</strong>: der Dokumenttext und deine Frage.</li>
+  <li>Beim <strong>Sprachassistenten</strong>: deine Eingabe als Text, der bisherige Verlauf der
+    Sitzung sowie ein kompakter Finanz-Kontext (z.&nbsp;B. Monatssummen, Kontostände,
+    Kategorienamen, anstehende To-Dos/Termine — einschließlich dort hinterlegter Orte/Adressen,
+    damit etwa „Navigiere mich zu meinem Termin" funktioniert). Die Sprach-zu-Text-Erkennung
+    erfolgt durch dein Android-System (je nach Gerät ggf. unter Einbindung von Google-Diensten);
+    an unsere Server wird ausschließlich der erkannte Text übertragen, niemals die Tonaufnahme.</li>
+</ul>
+<p>
+  Es werden keine Konto- oder Zugangsdaten übertragen; die Texterkennung (OCR) beim Scannen läuft
+  vollständig auf deinem Gerät. Anthropic verwendet API-Daten nicht zum Training seiner Modelle.
+  Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Funktionserbringung auf deine Anfrage).
   Datenschutzinformationen: <a href="https://www.anthropic.com/privacy" target="_blank" rel="noreferrer">anthropic.com/privacy</a>
 </p>
 
@@ -128,10 +141,12 @@
 <h2>7. Berechtigungen</h2>
 <table>
   <tr><th>Berechtigung</th><th>Zweck</th></tr>
-  <tr><td>INTERNET</td><td>Cloud-Sync (optional) und Fehler-Reporting</td></tr>
+  <tr><td>INTERNET</td><td>Cloud-Sync (optional), KI-Funktionen (optional) und Fehler-Reporting</td></tr>
+  <tr><td>RECORD_AUDIO</td><td>Spracheingabe für den KI-Assistenten — nur während aktiver Nutzung; die Erkennung übernimmt dein Android-System, übertragen wird nur der erkannte Text</td></tr>
   <tr><td>USE_BIOMETRIC / USE_FINGERPRINT</td><td>Optionaler App-Lock per Fingerabdruck/Gesichtserkennung</td></tr>
   <tr><td>POST_NOTIFICATIONS</td><td>Lokale Erinnerungen (Fixkosten, Budgetwarnungen) — kein Push-Server</td></tr>
   <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Wiederherstellen lokaler Erinnerungen nach Gerätestart</td></tr>
+  <tr><td>com.android.vending.BILLING</td><td>In-App-Käufe über Google Play (Pro-Funktionen)</td></tr>
 </table>
 
 <h2>8. Deine Rechte (DSGVO)</h2>
@@ -205,12 +220,25 @@
 
 <h2>5. AI features (Anthropic Claude)</h2>
 <p>
-  BudgeOS offers optional AI features: automatic <strong>receipt extraction</strong> when scanning
-  and <strong>"Ask the document"</strong>. Only when you actively trigger one of these features,
-  the content of the respective receipt or document (photo or recognized text, plus your question
-  if any) is transmitted via a secured server function (Supabase Edge, EU) to the
-  <strong>Anthropic API (Claude)</strong> and processed there solely to answer your request. No
-  account, login or other app data is transmitted; text recognition (OCR) itself runs entirely on
+  BudgeOS offers optional AI features: automatic <strong>receipt/document extraction</strong> when
+  scanning (including detected amounts, deadlines and issuer contact details such as address, phone
+  number and opening hours), <strong>"Ask the document"</strong>, and the <strong>AI voice
+  assistant</strong>. Only when you actively trigger one of these features, the content required
+  for it is transmitted via a secured server function (Supabase Edge, EU) to the
+  <strong>Anthropic API (Claude)</strong> and processed there solely to answer your request:
+</p>
+<ul>
+  <li>For <strong>scans</strong>: the photo or recognized text of the respective receipt/document.</li>
+  <li>For <strong>"Ask the document"</strong>: the document text and your question.</li>
+  <li>For the <strong>voice assistant</strong>: your input as text, the current session history,
+    and a compact financial context (e.g. monthly totals, account balances, category names,
+    upcoming to-dos/events — including locations/addresses stored there, so that e.g. "navigate
+    me to my appointment" works). Speech-to-text recognition is performed by your Android system
+    (depending on the device, Google services may be involved); only the recognized text is ever
+    transmitted to our servers, never the audio recording.</li>
+</ul>
+<p>
+  No account or login data is transmitted; text recognition (OCR) when scanning runs entirely on
   your device. Anthropic does not use API data to train its models. Legal basis: Art. 6(1)(b)
   GDPR (providing the feature at your request).
   Privacy details: <a href="https://www.anthropic.com/privacy" target="_blank" rel="noreferrer">anthropic.com/privacy</a>
@@ -231,10 +259,12 @@
 <h2>7. Permissions</h2>
 <table>
   <tr><th>Permission</th><th>Purpose</th></tr>
-  <tr><td>INTERNET</td><td>Cloud sync (optional) and error reporting</td></tr>
+  <tr><td>INTERNET</td><td>Cloud sync (optional), AI features (optional) and error reporting</td></tr>
+  <tr><td>RECORD_AUDIO</td><td>Voice input for the AI assistant — only while actively used; recognition is performed by your Android system, only the recognized text is transmitted</td></tr>
   <tr><td>USE_BIOMETRIC / USE_FINGERPRINT</td><td>Optional app lock via fingerprint/face recognition</td></tr>
   <tr><td>POST_NOTIFICATIONS</td><td>Local reminders (recurring costs, budget alerts) — no push server</td></tr>
   <tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restore local reminders after device reboot</td></tr>
+  <tr><td>com.android.vending.BILLING</td><td>In-app purchases via Google Play (Pro features)</td></tr>
 </table>
 
 <h2>8. Your rights (GDPR)</h2>
