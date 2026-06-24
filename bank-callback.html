@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BudgeOS — Bank verbinden</title>
+  <!--
+    Enable-Banking-Redirect-Ziel. Nach der Anmeldung bei der Bank landet der
+    Nutzer hier mit ?code=…&state=…; diese Seite leitet per Deep-Link zurück in
+    die App (budgeos://bank-callback). Statisch, kein Tracking, keine Secrets.
+    → Deploy in das Site-Repo (egnhlz.github.io/budgeos-site/bank-callback.html)
+    und exakt diese URL als Redirect-URI bei Enable Banking registrieren.
+  -->
+  <style>
+    :root { color-scheme: light dark }
+    body { margin: 0; min-height: 100dvh; display: grid; place-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #20212b; color: #fff; padding: 24px }
+    .card { max-width: 360px; text-align: center; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 32px 24px }
+    h1 { font-size: 22px; margin: 0 0 8px }
+    p { opacity: .75; font-size: 15px; line-height: 1.5; margin: 0 0 20px }
+    a.btn { display: inline-block; background: #6c5cff; color: #fff; text-decoration: none;
+      font-weight: 600; padding: 12px 22px; border-radius: 12px }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Bank verbunden ✓</h1>
+    <p id="msg">Zurück zur App …</p>
+    <a id="open" class="btn" href="#">App öffnen</a>
+  </div>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var code = p.get('code');
+      var state = p.get('state') || '';
+      var err = p.get('error');
+      var deep = 'budgeos://bank-callback?' +
+        new URLSearchParams({ code: code || '', state: state, error: err || '' }).toString();
+      document.getElementById('open').setAttribute('href', deep);
+      if (err) {
+        document.getElementById('title').textContent = 'Abgebrochen';
+        document.getElementById('msg').textContent = 'Die Bank-Verbindung wurde nicht abgeschlossen. Du kannst die App öffnen und es erneut versuchen.';
+      } else if (!code) {
+        document.getElementById('title').textContent = 'Kein Code erhalten';
+        document.getElementById('msg').textContent = 'Bitte in der App erneut versuchen.';
+      } else {
+        // Automatischer Deep-Link zurück in die App.
+        location.href = deep;
+      }
+    })();
+  </script>
+</body>
+</html>
